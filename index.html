@@ -53,6 +53,10 @@
         cursor: pointer;
         /* transform: translateX(20px); */
       }
+      #pic{
+        width: 320px;
+        margin: 2rem auto;
+      }
     </style>
   </head>
   <body>
@@ -64,12 +68,14 @@
       </div>
 
       <h1>Click on the Toggle Button</h1>
+      <img src="day.gif" alt="" id="pic">
     </div>
     <script>
       let btn = document.getElementById("button");
       let slider = document.getElementById("white");
       let bgChange = document.getElementsByTagName("body")[0];
       let dark = false;
+      let picture = document.getElementById("pic");
       btn.addEventListener("click", () => {
         if (!dark) {
           bgChange.style.backgroundColor = "black";
@@ -77,12 +83,14 @@
           dark = true;
           slider.style.transform = "translateX(70px)";
           slider.style.transition = "transform 1s ease";
+          picture.src = "tenor.gif";
         } else {
           bgChange.style.backgroundColor = "white";
           bgChange.style.color = "black";
           dark = false;
           slider.style.transform = "translateX(0px)";
           slider.style.transition = "transform 1s ease";
+          picture.src = "day.gif";
         }
       });
     </script>
